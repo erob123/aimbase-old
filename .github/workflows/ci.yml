@@ -27,7 +27,7 @@ jobs:
           poetry-version: 1.5.1
 
       - name: Install project
-        run: poetry install
+        run: poetry install --without dev
 
       - name: Test
         run: poetry run pytest --junitxml=pytest.xml --cov-report=term-missing:skip-covered --cov=app tests/ | tee pytest-coverage.txt
