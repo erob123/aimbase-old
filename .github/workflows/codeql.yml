@@ -40,8 +40,6 @@ jobs:
         # Use only 'javascript' to analyze code written in JavaScript, TypeScript or both
         # Learn more about CodeQL language support at https://aka.ms/codeql-docs/language-support
 
-    runs-on: ${{ matrix.os }}
-
     steps:
     - name: Checkout repository
       uses: actions/checkout@v3
