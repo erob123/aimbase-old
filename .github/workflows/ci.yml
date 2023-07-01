@@ -23,9 +23,9 @@ jobs:
         image: postgres
         # Provide the password for postgres
         env:
-          POSTGRES_PASSWORD: notarealpass
-          POSTGRES_USER: postuser
-          POSTGRES_DB: postdb
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_USER: postgres
+          POSTGRES_DB: postgres
         ports:
           - 5432:5432 # exposing 5432 port for application to use
         # Set health checks to wait until postgres has started
@@ -41,7 +41,7 @@ jobs:
           # for psql
           sudo apt-get install -y postgresql-client
           # Test psql connection
-          PGPASSWORD=notarealpass psql -h localhost -p 5432 -U postuser -d postdb -c "select 1"
+          PGPASSWORD=postgres psql -h localhost -p 5432 -U postgres -d postgres -c "select 1"
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v2
         with:
